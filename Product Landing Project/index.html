@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&family=Pathway+Extreme:wght@400;600&family=Poppins&family=Raleway&family=Zeyada&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8a55a6124d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header__logo-area">
+            <a href="#" class="header__logo">Media-Shop</a>
+          </div>
+        <div class="header__search-area">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="header__search-input" placeholder="Search product...">
+        </div>
+        <div class="header__shopping-cart">
+            <div class="header__cart-area">
+                <span id="header__cart"><i class="fa-solid fa-bag-shopping"></i>
+                Cart <span id="header__cart-product-number">0</span></span>
+                <ul class="header__cart-container"></ul>
+            </div>
+            <span id="header__cart-total">0</span>
+        </div>
+    </header>
+    <main>
+       <div class="container">
+          <div class="main__card">
+              <img src="images/image-2.jpg" alt="product picture watch" id="product-img" class="main__card-image">
+              <span id="pro-name" class="main__card-name">Watch</span>
+              <span class="main__card-desc">Smart watch with Easy-go connect option and fitness tracking functions.</span>
+              <span class="main__card-price">155.65</span>
+              <button class="main__card-button">Add to Chart<i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+          <div class="main__card">
+             <img src="images/image-3.jpg" alt="product picture headphone" id="product-img" class="main__card-image">
+             <span id="pro-name" class="main__card-name">Headphones</span>
+             <span class="main__card-desc">Smart watch with Easy-go connect option and fitness tracking functions.</span>
+             <span class="main__card-price">219.99</span>
+             <button class="main__card-button">Add to Chart<i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+         <div class="main__card">
+            <img src="images/image-4.jpg" alt="product picture sunglasses" id="product-img" class="main__card-image">
+            <span id="pro-name" class="main__card-name">Mobile Phone</span>
+            <span class="main__card-desc">Smart watch with Easy-go connect option and fitness tracking functions.</span>
+            <span class="main__card-price">1125.99</span>
+            <button class="main__card-button">Add to Chart<i class="fa-solid fa-cart-shopping"></i></button>
+         </div>
+         <div class="main__card">
+          <img src="images/image-1.jpg" alt="product picture sunglasses" id="product-img" class="main__card-image">
+          <span id="pro-name" class="main__card-name">Sunglasses</span>
+          <span class="main__card-desc">Smart watch with Easy-go connect option and fitness tracking functions.</span>
+          <span class="main__card-price">55.99</span>
+          <button class="main__card-button">Add to Chart<i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+         <div class="main__card">
+            <img src="images/image-5.jpg" alt="product picture sunglasses" id="product-img" class="main__card-image">
+            <span id="pro-name" class="main__card-name">Laptop</span>
+            <span class="main__card-desc">Smart watch with Easy-go connect option and fitness tracking functions.</span>
+            <span class="main__card-price">2500.99</span>
+            <button class="main__card-button">Add to Chart<i class="fa-solid fa-cart-shopping"></i></button>
+         </div>
+         <div class="main__card">
+            <img src="images/image-6.jpg" alt="product picture sunglasses" id="product-img" class="main__card-image">
+            <span id="pro-name" class="main__card-name">Camera Pro</span>
+            <span class="main__card-desc">Smart watch with Easy-go connect option and fitness tracking functions.</span>
+            <span class="main__card-price">1125.55</span>
+            <button class="main__card-button">Add to Chart<i class="fa-solid fa-cart-shopping"></i></button>
+         </div>
+       </div>
+       <div class="main__card-img-backdrop">
+           <div class="main__card-inner-modal">
+           </div>
+           <button id="image-close-btn">X</button>
+       </div>
+     </main>
+     <footer>
+        <div class="footer__accordion">
+          <div class="footer__question-area">
+            <p class="footer__question">Information about shipping and ordering</p>
+            <p class="footer__answer">As soon as your order is on its way and has been handed over to one of our shipping service providers, you will receive your and tracking number via email. </p>
+          </div>
+          <div class="footer__question-area">
+            <p class="footer__question">Return & Shipping Information</p>
+            <p class="footer__answer">As soon as your order is on its way and has been handed over to one of our shipping service providers, you will receive your and tracking number via email. </p>
+          </div>
+          <div class="footer__question-area">
+            <p class="footer__question">Our Privacy Policy</p>
+            <p class="footer__answer">As soon as your order is on its way and has been handed over to one of our shipping service providers, you will receive your and tracking number via email. </p>
+          </div>
+        </div>
+          <div class="footer__icons-area">
+            <span class="footer__text">Follow us</span>
+            <div class="footer__icons">
+              <a href="#" class="footer__icon"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="footer__icon"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" class="footer__icon"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="footer__icon"><i class="fa-brands fa-youtube"></i></a>
+           </div>
+          </div>
+     </footer>
+    <script src="app.js"></script>
+</body>
+</html>
