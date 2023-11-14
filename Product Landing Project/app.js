@@ -18,6 +18,8 @@ const footerAnswer = document.querySelector('.footer__answer');
 let totalPriceofProducts = 0;
 let totalProductNumberInCart = 0;
 
+//I created array in order to check the items in the list
+const listItemArr = [];
 
 // Adding EventListener to cardButtons
 
@@ -32,12 +34,14 @@ cardButtons.forEach(button => button.addEventListener('click', function (e) {
    totalProductNumberInCart++;
    productNumberInCart.innerText = totalProductNumberInCart;
 
+
    // Creating list item and delete button for Cart container
    const newListItem = document.createElement('li');
    newListItem.classList.add('header__cart-added-item');
    const content = button.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
-   newListItem.innerHTML = `${content} ${price}$`;
+   newListItem.innerHTML = `<span>${content}</span> ${price}$`;
    shoppingItemContainer.appendChild(newListItem);
+   listItemArr.push(newListItem.firstElementChild.innerText);
    const deleteItemButton = document.createElement('button');
    deleteItemButton.classList.add('header__cart-delete-item-btn');
    deleteItemButton.innerText = 'X';
@@ -46,13 +50,22 @@ cardButtons.forEach(button => button.addEventListener('click', function (e) {
    // Removing the list item, decrement product number and price
    deleteItemButton.addEventListener('click', function () {
       newListItem.remove();
+      listItemArr.splice(listItemArr.indexOf(newListItem.firstElementChild.innerText), 1);
       totalPriceofProducts -= price;
       chartTotal.textContent = totalPriceofProducts.toFixed(2);
       totalProductNumberInCart--;
       productNumberInCart.innerText = totalProductNumberInCart;
-   })
 
+      //If there is no target item in the cart, buttons go back to the first version in terms of color, text content etc..
+
+      if (listItemArr.indexOf(newListItem.firstElementChild.innerText) == -1) {
+         button.innerHTML = `<span class="main__card-button">Add to Cart</span><i class="fa-solid fa-cart-shopping"></i>`;
+         button.style.backgroundColor = '#e85d04';
+      };
+   });
 }));
+
+
 
 //When Cart is clicked, show added items container
 cart.addEventListener('click', function () {
