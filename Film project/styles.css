@@ -37,14 +37,6 @@ hr {
     width: 100%;
 }
 
-select {
-    padding: 4px;
-    width: 80%;
-    border: none;
-    outline: 0;
-    cursor: pointer;
-}
-
 .header__text {
     color: #ffa200;
     font-family: 'Black Ops One', sans-serif;
@@ -87,21 +79,32 @@ select {
     cursor: pointer;
 }
 
-.form-area--hidden {
+.search-box {
     background-color: #fff;
     border-radius: 16px;
     margin-top: 4px;
     padding: 5px;
     position: relative;
+    width: 300px;
 }
 
 .form-input {
+    width: 100%;
     background-color: #fff;
-    padding: 7px;
-    border: none;
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #ccc;
     border-radius: 16px;
     outline: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
+}
+
+select {
+    width: 100%;
 }
 
 .form-container__genre {
@@ -110,13 +113,16 @@ select {
 }
 
 .btn {
-    padding: 7px;
     border-radius: 50%;
     background-color: #ffa200;
     border: 1px solid #fff;
     position: absolute;
     right: 5px;
     cursor: pointer;
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    padding: 10px;
 }
 
 .fa-solid {
@@ -207,13 +213,13 @@ select {
     }
 
     .response-container {
-         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
     .movie-card {
         min-height: 300px;
     }
-    
+
     .card--back {
         font-size: 0.7em;
     }

@@ -1,19 +1,19 @@
 const apiKey = '0fcff4e02ae310d6aa49e8a3396e69cd';
 const baseUrl = 'https://api.themoviedb.org/3';
 
-const getByActorForm = document.querySelector('#getbyactorForm');
+const getByActorForm = document.querySelector('#getByActorForm');
 const responseContainer = document.querySelector('.response-container');
 const getByActorFormInput = document.querySelector('.actorInput');
 const formContainer = document.querySelectorAll('.form-container');
-const getByYearForm = document.querySelector('#getbyyearForm');
+const getByYearForm = document.querySelector('#getByYearForm');
 const getByYearFormInput = document.querySelector('.year-input');
-const getByGenreForm = document.querySelector('#getbygenreForm');
+const getByGenreForm = document.querySelector('#getByGenreForm');
 const selectEl = document.querySelector('#genres');
 
 
 
 formContainer.forEach(container => container.addEventListener('click', function (e) {
-    document.querySelectorAll('.form-area--hidden').forEach(area => area.hidden = true);
+    document.querySelectorAll('.search-box').forEach(area => area.hidden = true);
     const form = e.currentTarget.firstElementChild;
     const { id } = e.currentTarget;
     const areaToShow = form.querySelector(`[aria-labelledby="${id}"]`);
@@ -22,10 +22,10 @@ formContainer.forEach(container => container.addEventListener('click', function 
 
 getByActorForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    getPerson();
+    getByActor();
 });
 
-function getPerson() {
+function getByActor() {
     fetch(`${baseUrl}/search/person?api_key=${apiKey}&query=${getByActorFormInput.value}`)
         .then(response => response.json())
         .then(data => {
@@ -74,9 +74,14 @@ getByYearForm.addEventListener('submit', function (e) {
         .then(response => response.json())
         .then(data => {
             responseContainer.innerHTML = '';
-            data.results.map(movie => {
-                getMovies(movie.title, movie.poster_path, movie.overview, movie.vote_average);
-            });
+            const yearRegex = /^\d{4}$/;
+            if (yearRegex.test(getByYearFormInput.value)) {
+                data.results.map(movie => {
+                getMovies(movie.title, movie.poster_path, movie.overview, movie.vote_average)
+            })
+            } else {
+                responseContainer.innerHTML = '<p class="error-message">No results.</p>';
+            }
         })
         .catch(err => console.log(err));
 })
