@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Finder</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Hi+Melody&family=Montserrat:ital,wght@0,500;1,300&family=Pathway+Extreme:wght@400;600&family=Poppins&family=Raleway&family=Zeyada&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8a55a6124d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <figure class="logo-container">
+            <img src="movie.png" class="logo">
+        </figure>
+        <h1 class="header__text">Movie Finder</h1>
+    </header>
+    <div class="container">
+        <div class="form-container" id="actor">
+            <form id="getbyactorForm">
+                <label id="actor">Search the movies by actor: </label>
+                <div aria-labelledby="actor" class="form-area--hidden" hidden>
+                    <input id="actor" type="text" class="actorInput form-input" placeholder="Search...">
+                    <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="form-container form-container__genre" id="genre">
+            <form id="getbygenreForm">
+                <label id="genre">Choose a genre: </label>
+                <div aria-labelledby="genre" class="form-area--hidden" hidden>
+                    <select id="genres" name="genres">
+                    </select>
+                    <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="form-container" id="year">
+            <form id="getbyyearForm">
+                <label id="year">Search the movies by year: </label>
+                <div aria-labelledby="year" class="form-area--hidden" hidden>
+                    <input id="year" type="text" class="year-input form-input" placeholder="Search...">
+                    <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="response-container">
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
