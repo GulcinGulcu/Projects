@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #f35b04 ,#eb6c23);
+    margin: 0;
+}
+
+.container {
+    border: 5px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    color: #f35b04;
+
+}
+
+.game-link {
+    text-decoration: none;
+    font-family: 'Titan One', sans-serif;
+    font-size: 3.5em;
+    letter-spacing: 5px;
+    color: #fff;
+    display: block;
+    padding: 20px;
+    transition: 0.5s;
+   
+}
+
+.container:hover {
+    background-color: #fff;
+}
+
+.game-link:hover {
+    color: #f35b04;
+    font-size: 4.5em;
+}
+
