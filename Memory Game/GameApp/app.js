@@ -50,8 +50,6 @@ function handleClick(e) {
         }
     }
 
-    scoreDiv.innerText = score;
-
 };
 
 cards.forEach(card => card.addEventListener('click', handleClick));
