@@ -61,7 +61,7 @@ function closeCard(card) {
 function closePrevCard(arr, id) {
     arr.forEach(item => {
         if (item.lastElementChild.firstElementChild.id === id) {
-            item.classList.remove('flipped');
+            closeCard(item);
         }
     })
 }
