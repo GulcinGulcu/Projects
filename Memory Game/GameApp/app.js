@@ -76,7 +76,9 @@ let withLeadingNumberMinutes = 0;
 
 function timer() {
     second++;
-    if (second === 60) {
+const ONE_MINUTE_IN_SECONDS = 60;
+// Some other code
+    if (second === ONE_MINUTE_IN_SECONDS) {
         second = 0;
         minute++;
     }
