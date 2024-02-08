@@ -1,0 +1,47 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+    margin: 0 auto;
+    padding: 25px;
+}
+label {
+    padding: 5px 15px;
+    border: 1px solid #293264;
+    border-radius: 8px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    background-color: #fff;
+    float: left;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.question-block {
+    border: none;
+    border-bottom: 1px solid #898b8c;
+    padding-bottom: 25px;
+}
+
+.question {
+    font-size: 18px;
+}
+
+
+input[type="radio"]{
+    display: none;
+}
+
+.green {
+    background-color: #81c590 !important;
+}
+
+.error-msg {
+    color: #fa3b54;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}
