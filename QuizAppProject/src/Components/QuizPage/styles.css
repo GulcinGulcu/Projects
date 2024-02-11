@@ -35,13 +35,31 @@ input[type="radio"]{
     display: none;
 }
 
-.green {
-    background-color: #81c590 !important;
-}
-
 .error-msg {
     color: #fa3b54;
     font-size: 20px;
     text-align: center;
     margin: 0;
+}
+
+.load-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 30px;
+}
+
+
+
+.clicked {
+    background-color: #c1c7e6;
+}
+
+.correct, .correct-answer {
+    background-color: #81c590 ;
+}
+
+.incorrect {
+    background-color: #F8BCBC;
 }
