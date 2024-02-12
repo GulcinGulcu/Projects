@@ -1,5 +1,5 @@
 .App {
-  height: 100%;
+  min-height: 100%;
   font-family: 'Raleway', sans-serif;
   color: #293264;
   background-color: #e5e5f7;

@@ -11,6 +11,7 @@ export const QuizPage = ({ setStart }) => {
     const [completed, setCompleted] = useState(false);
     const [score, setScore] = useState(0);
     const [errorMessage, setErrorMessage] = useState(null);
+    const [userAnswersData, setUserAnswersData] = useState({});
     const renderAfterCalled = useRef(false);
 
     useEffect(() => {
@@ -42,7 +43,6 @@ export const QuizPage = ({ setStart }) => {
         renderAfterCalled.current = true;
     }, []);
 
-    const [userAnswersData, setUserAnswersData] = useState({});
     function handleChange(e, option, questionId) {
         const { name } = e.target;
         setUserAnswersData(prev => {
@@ -65,10 +65,6 @@ export const QuizPage = ({ setStart }) => {
         setQuestions(updatedQuestions);
 
     }
-
-    console.log(userAnswersData)
-
-
 
     function checkAnswers(e) {
         e.preventDefault();
