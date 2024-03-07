@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Paleway', sans-serif;
+    background-color: #8ecae6;
+}
+
+.container {
+   width: 45%;
+   display: grid;
+   gap: 15px;
+   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+   border: 5px solid #f35b04;
+   padding: 12px;
+   border-radius: 5px;
+}
+
+.card {
+    border: 3px solid #fff;
+    border-radius: 5px;
+    perspective: 1000px;
+    background-color: transparent;
+    min-height: 150px;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+
+.card--front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.8em;
+    background-color: #f35b04;
+}
+
+
+.card--front,
+.card--back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+
+.card--back {
+    padding: 8px;
+    transform: rotateY(180deg);
+    color: #000;
+    background-color: #dde5b6;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.card__img-container {
+    width: 100%;
+    height: 100%;
+}
+
+.card__img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.success-message {
+    padding: 15px;
+    font-size: 2em;
+    background-color: #f35b04;
+    color: #fff;
+    font-family: 'Titan One', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    letter-spacing: 2px;
+    border-radius: 8px;
+}
+
+.success-message-emoji {
+    font-size: 1.8em;
+}
+
+.finish-time {
+    font-size: 2.1em;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.try-again-btn {
+    font-size: 1.9em;
+    border: 3px solid #fff;
+    background-color: #f35b04;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.fa-rotate-right {
+    padding: 5px;
+}
+
+.success--hidden {
+    display: none;
+    position: absolute;
+    top: 4%;
+    font-family: 'Titan One', sans-serif;
+    font-size: 2.5em;
+    color:#f35b04;
+}
