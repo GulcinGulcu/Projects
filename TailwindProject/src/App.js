@@ -1,37 +1,35 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-import User from './Assets/user0.jpg';
-import User1 from './Assets/user1.jpg';
-import User2 from './Assets/user2.jpg';
-import User3 from './Assets/user3.jpg';
-import User4 from './Assets/user4.jpg';
-import User5 from './Assets/user5.jpg';
-import User6 from './Assets/user6.jpg';
-import User7 from './Assets/user7.jpg';
-import User8 from './Assets/user8.jpg';
-import User9 from './Assets/user9.jpg';
 import UserIcon from './Assets/usericon.jpg';
+import { userPhotos } from './userPhotoData';
+import { v4 as createId } from 'uuid';
 
 function App() {
 
   const [users, setUsers] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
-  const userPhotos = [User, User1, User2, User3, User4, User5, User6, User7, User8, User9];
   const [activeForm, setActiveForm] = useState(false);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
-      .then(userList => setUsers(userList));
+      .then(userList => setUsers(userList))
+      .catch(err => console.log(err));
   }, []);
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const onSubmit = data => {
-    const cleansedData = { ...data, id: users.length + 1, company: { name: data.company, catchPhrase: 'Implemented secondary concept' }, }
-    setUsers(prevUsers => [...prevUsers, cleansedData])
+    const cleansedData = { ...data, id: createId(), company: { name: data.company, catchPhrase: 'Implemented secondary concept' }, }
+    setUsers(prevUsers => [...prevUsers, cleansedData]);
     setActiveForm(false);
+    reset();
   };
+
+  const handleDelete = (id) => {
+     const remainingUsers = users.filter(user => user.id !== id);
+     setUsers(remainingUsers);
+  }
 
   return (
     <main className={`flex justify-center bg-gray-200 p-8 dark:bg-slate-800 duration-500 ${darkMode ? 'dark' : ''}`}>
@@ -42,8 +40,8 @@ function App() {
             <p>You can find users information including their status.</p>
           </div>
           <div className='flex justify-end items-center'>
-            <button className="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-400 dark:bg-slate-800" type='button' onClick={() => setDarkMode(!darkMode)}>{darkMode ? 'Light' : 'Dark'} mode</button>
-            <button className='ml-4 px-4 py-2 bg-purple-700 rounded-lg text-purple-100 hover:bg-purple-800' type='button' onClick={() => setActiveForm(!activeForm)}>Add user</button>
+            <button className="bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-400 dark:bg-slate-800 duration-300" type='button' onClick={() => setDarkMode(!darkMode)}>{darkMode ? 'Light' : 'Dark'} mode</button>
+            <button className='ml-4 px-4 py-2 bg-purple-700 rounded-lg text-purple-100 hover:bg-purple-800 duration-300' type='button' onClick={() => setActiveForm(!activeForm)}>Add user</button>
           </div>
         </div>
         <div className='overflow-x-auto'>
@@ -65,7 +63,7 @@ function App() {
                 <input id='phone' type='tel' placeholder='Phone Number' className='border mb-2 w-full bg-gray-200 shadow border rounded-lg px-3 py-2 focus:bg-blue-100 placeholder-gray-500' {...register("phone", { required: true })} />
                 {errors.phone && <span className='text-sm text-red-600'>Phone number is required</span>}
               </div>
-              <button type='submit' className='ml-4 px-4 py-2 bg-purple-700 rounded-lg text-purple-100 hover:bg-purple-800 text-sm shadow'>+ Add User</button>
+              <button type='submit' className='ml-4 px-4 py-2 bg-purple-700 rounded-lg text-purple-100 hover:bg-purple-800 text-sm shadow duration-300'>+ Add User</button>
             </form>}
           <table className='lg:w-full'>
             <thead className='text-gray-700 dark:text-gray-200'>
@@ -101,7 +99,7 @@ function App() {
                     </td>
                     <td className='w-1/12 py-4 px-2'>
                       <div className='w-full flex justify-center'>
-                        <button className='text-blue-600 hover:text-blue-900 dark:text-blue-200' type='button'>Edit</button>
+                        <button className='text-red-600 hover:text-red-700 dark:text-red-500 duration-500' type='button' onClick={() => handleDelete(user.id)}>Delete</button>
                       </div>
                     </td>
                   </tr>
