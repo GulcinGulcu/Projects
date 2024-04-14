@@ -28,7 +28,7 @@ function App() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
-    const cleansedData = {...data, id: users.length + 1, company: {name: data.company, catchPhrase: 'Implemented secondary concept'},}
+    const cleansedData = { ...data, id: users.length + 1, company: { name: data.company, catchPhrase: 'Implemented secondary concept' }, }
     setUsers(prevUsers => [...prevUsers, cleansedData])
     setActiveForm(false);
   };
@@ -52,18 +52,18 @@ function App() {
               <div className='flex flex-col items-center w-full sm:m-2'>
                 <label htmlFor='name' className='sr-only'>Name</label>
                 <input id='name' type='text' placeholder='Name' className='border mb-2 w-full bg-gray-200 shadow border rounded-lg px-3 py-2 focus:bg-blue-100 placeholder-gray-500' {...register("name", { required: true, maxLength: 50 })} />
-                {errors.name && <span>Name is required.</span>}
+                {errors.name && <span className='text-sm text-red-600'>Name is required.</span>}
                 <label htmlFor='email' className='sr-only'>Email</label>
                 <input id='email' type='text' placeholder='Email' className='border mb-2 w-full bg-gray-200 shadow border rounded-lg px-3 py-2 focus:bg-blue-100 placeholder-gray-500' {...register("email", { required: true })} />
-                {errors.email && <span>Email is required</span>}
+                {errors.email && <span className='text-sm text-red-600'>Email is required</span>}
               </div>
               <div className='flex flex-col items-center w-full'>
                 <label htmlFor='company' className='sr-only'>Company Name</label>
                 <input id='company' type='text' placeholder='Company Name' className='border mb-2 w-full  shadow border rounded-lg px-3 py-2 focus:bg-blue-100 bg-gray-200 placeholder-gray-500' {...register("company", { required: true })} />
-                {errors.company && <span>Company name is required</span>}
+                {errors.company && <span className='text-sm text-red-600'>Company name is required</span>}
                 <label htmlFor='phone' className='sr-only'>Phone Number</label>
                 <input id='phone' type='tel' placeholder='Phone Number' className='border mb-2 w-full bg-gray-200 shadow border rounded-lg px-3 py-2 focus:bg-blue-100 placeholder-gray-500' {...register("phone", { required: true })} />
-                {errors.phone && <span>Phone number is required</span>}
+                {errors.phone && <span className='text-sm text-red-600'>Phone number is required</span>}
               </div>
               <button type='submit' className='ml-4 px-4 py-2 bg-purple-700 rounded-lg text-purple-100 hover:bg-purple-800 text-sm shadow'>+ Add User</button>
             </form>}
