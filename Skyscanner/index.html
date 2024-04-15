@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skyscanner</title>
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8a55a6124d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="skyscnnr.PNG" alt="Skyscanner logo">
+      <div>
+        <ul class="nav-ul">
+          <li class="nav-li"><a href="#" class="nav-a"><i class="fa-solid fa-earth-americas"></i></a></li>
+          <li class="nav-li"><a href="#" class="nav-a"><i class="fa-solid fa-user"></i>Log in</a></li>
+          <li class="nav-li"><a href="#" class="nav-a">&#9776;</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="upper-holder">
+        <div class="holder">
+          <p>Millions of cheap flights. One simple search.</p>
+          <form method="post" action="#">
+            <div class="form-div border-radius">
+              <label for="from">From</label>
+              <input type="text" id="from" name="from" placeholder="Country, city or airport">
+            </div>
+            <div class="form-div">
+              <label for="to">To</label>
+              <input type="text" id="to" name="to" placeholder="Country, city or airport">
+            </div>
+            <div class="form-div">
+              <label for="departure-date">Depart</label>
+              <input type="text" id="departure-date" name="departureDate" placeholder="Add Date">
+            </div>
+            <div class="form-div border-radius2">
+              <label for="return-date">Return</label>
+              <input type="text" id="return-date" name="returnDate" placeholder="Add Date">
+            </div>
+            <div class="form-div border-radius1 last">
+              <label for="cabin-class">Travellers & cabin class</label>
+              <input type="text" id="cabin-class" name="cabinClass" placeholder="1 Adult, Economy">
+            </div>
+            <input type="submit" id="submit" value="Search" name="Submit" />
+          </form>
+          <div class="checkBox">
+            <input type="checkbox" id="checked" name="check">
+            <label for="checked">Direct flights</label>
+          </div>
+        </div>
+      </div>
+      <div class="down-holder">
+        <div class="d-holder">
+          <ul class="main-ul">
+            <li class="main-li"><a href="#" class="main-a"><i class="fa-solid fa-bed"></i>Hotels</a></li>
+            <li class="main-li"><a href="#" class="main-a"><i class="fa-solid fa-car-side"></i>Car hire</a></li>
+            <li class="main-li"><a href="#" class="main-a"><i class="fa-solid fa-earth-americas"></i>Explore
+                everywhere</a></li>
+            <li class="main-li"><a href="#" class="main-a"><i class="fa-regular fa-flag"></i>Savings generator</a></li>
+          </ul>
+          <div class="img-div">
+            <div class="img-text">
+              <h1 class="img-div-h">Secret beach breaks</h1>
+              <p class="img-p">We're putting these affordable, alternative spots on your radar this summer, thank us
+                later.</p>
+              <a href="#" class="img-a">To the beach</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
