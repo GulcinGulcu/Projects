@@ -6,9 +6,9 @@ This project is made by React for serving as assistant for teachers. Teacher can
 
 ## Functionality of the Project
 
-React Router for routing between the pages
-State is managed by Redux
-API Requests with fetch API
+React Router for routing between the pages \
+State is managed by Redux \
+API Requests with fetch API \
 MUI is used
 
 
