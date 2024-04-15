@@ -1,0 +1,87 @@
+.content-wrapper {
+    padding: 25px 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 35px;
+    margin-bottom: 15px;
+
+}
+
+textarea {
+    border: none;
+    resize: none;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 10px;
+    width: 100%;
+    font-family: inherit;
+    padding: 10px;
+}
+
+.classroom__list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.classroom__list__list-item {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    justify-items: center;
+    padding: 25px 15px;
+    gap: 25px;
+    background-color: #0d2129;
+}
+
+.classroom__list__list-content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    border-radius: 12px;
+    color: #000;
+    background-color: #F5F5F7;
+
+}
+
+.icon {
+    font-size: 30px;
+
+}
+
+.select-and-btn-area {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.classroom__list__delete-btn {
+    color: red;
+}
+
+.classroom__list__btn-area {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.classroom__list__btn-area > button {
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+.classroom__list__btn-area > button:hover {
+    background-color: #1a659e;
+}

@@ -1,0 +1,11 @@
+.page-container {
+    min-height: 100%;
+    padding-left: 22%;
+    background-color: #01161e;
+    
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+}

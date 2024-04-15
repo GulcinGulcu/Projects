@@ -1,0 +1,189 @@
+.home-page-wrapper {
+    font-family: 'Prompt', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.home-page-wrapper.logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+    transition: all 0.5s;
+}
+
+.home-page-wrapper.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding-top: 15px;
+    gap: 50px;
+}
+
+/* 
+background-size: cover;
+ background: linear-gradient(45deg, rgb(40, 49, 59, 0.7), rgb(72, 84, 97, 0.7)), url(../../Assets/nick-morrison-FHnnjk1Yj7Y-unsplash.jpg) no-repeat;
+*/
+
+.main-text {
+    font-size: 40px;
+}
+
+.text {
+    font-size: 25px;
+}
+
+.home-page__enroll-btn {
+    letter-spacing: 0;
+    padding: 10px 26px;
+    color: inherit;
+    border: 1px solid #fff;
+    background-color: transparent;
+    font-size: 24px;
+    width: 38%;
+    cursor: pointer;
+}
+
+.home-page__enroll-btn:hover {
+    background-color: #2C3E50;
+}
+
+.home-page__btns {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+
+}
+
+.home-page-wrapper--inside {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.welcome-board {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-height: 35%;
+    width: 90%;
+    background-color: #457b9d;
+    border-radius: 16px;
+    padding: 25px 15px;
+}
+
+.welcome-board img {
+    position: absolute;
+    height: 180%;
+    bottom: 0;
+    left: 0;
+}
+
+.welcome-board p,
+h2 {
+    margin: 0;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+
+.home__report {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.home__report > p, .home__recent-activities > p {
+    font-size: 24px;
+}
+
+
+.home__report-cards {
+    display: flex;
+    gap: 25px;
+}
+
+.home__report-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 25px;
+    padding: 10px 15px;
+    background-color: #0d2129;
+    border-radius: 12px;
+    min-width: 170px;
+}
+
+.home__report-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.purple {
+    background-color: #480ca8;
+}
+
+.aqua {
+   background-color: #2ec4b6;
+}
+
+.red {
+    background-color: #c81d25;
+}
+
+.blue {
+   background-color: #1a659e;
+}
+
+.home__report-title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px;
+}
+
+.home__report-empty {
+    border: 3px dashed #480ca8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    min-width: 170px;
+    border-radius: 12px;
+}
+
+.home__report-empty > span {
+    font-size: 34px;
+}
+
+.home__recent-activities {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home__recent-activities__list {
+    background-color: #0d2129;
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.home__recent-activities__list-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    width: 75%;
+    justify-content: space-between;
+}
