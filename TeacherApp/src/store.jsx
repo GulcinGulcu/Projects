@@ -3,6 +3,7 @@ import userReducer from './Modules/User/userSlice';
 import listReducer from './Modules/List/listSlicer';
 import studentReducer from './Modules/Student/studentSlicer';
 import recentActivitiesReducer from './Modules/RecentActivities/recentActivitiesSlicer';
+import darkModeReducer from './Modules/DarkMode/darkModeSlicer';
 
 
 export default configureStore({
@@ -11,5 +12,6 @@ export default configureStore({
         list: listReducer,
         student: studentReducer,
         recentActivities: recentActivitiesReducer,
+        darkMode: darkModeReducer,
     }
 })

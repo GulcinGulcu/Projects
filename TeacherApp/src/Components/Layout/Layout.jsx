@@ -1,16 +1,20 @@
 import { Outlet } from "react-router-dom"
 import { Header } from "../Header"
 import { SideBar } from "../Sidebar"
+import { useSelector } from "react-redux"
 import './styles.css'
 
 export const Layout = () => {
+    
+    const { isDarkMode } = useSelector(state => state.darkMode);
+
     return (
-    <div className="page-container">
-        <SideBar />
-        <main>
-            <Header />
-            <Outlet />
-        </main>
-    </div>
+        <div className={isDarkMode ? 'page-container dark' : 'page-container'}>
+            <SideBar />
+            <main>
+                <Header />
+                <Outlet />
+            </main>
+        </div>
     )
 }

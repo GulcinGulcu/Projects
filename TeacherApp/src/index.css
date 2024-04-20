@@ -1,6 +1,13 @@
 :root {
-    --color-primary: #480ca8;
-    --color-secondary: #0d2129;
+    --color-primary: #457b9d;
+    --color-darkModePrimary: #01161e;
+    --color-darkModeSecondary: #0d2129;
+    --color-darkModeLight:  #F5F5F7;
+    --color-lightModePrimary: #ebe8e1;
+    --color-lightModeWhite: #fff;
+    --color-lightModeDark: #191919;
+    --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 * {
@@ -14,7 +21,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    color: #fff;
 }
 
 ul {

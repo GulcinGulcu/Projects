@@ -8,6 +8,7 @@ import { GoPlus } from "react-icons/go";
 
 export const Report = () => {
     const student = useSelector((state) => state.student);
+    const {isDarkMode} = useSelector((state) => state.darkMode);
     const list = useSelector((state) => state.list);
     const assignments = list.filter(item => item.type === 'Assignment');
     const announcements = list.filter(item => item.type === 'Announcement');
@@ -20,7 +21,7 @@ export const Report = () => {
             <div className='home__report-cards'>
                 {reportData.map((report) => {
                     return (
-                        <Card key={report.id} className='home__report-card'>
+                        <Card key={report.id} className={isDarkMode ? 'home__report-card dark' : 'home__report-card'}>
                             <span className={`home__report-icon ${report.backgroundColor}`}>{report.icon}</span>
                             <span className='home__report-title'>{report.title}</span>
                             <span>{report.number}</span>

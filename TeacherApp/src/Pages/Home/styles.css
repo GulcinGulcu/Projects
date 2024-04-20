@@ -72,9 +72,10 @@ background-size: cover;
     justify-content: center;
     max-height: 35%;
     width: 90%;
-    background-color: #457b9d;
+    background-color: var(--color-primary);
     border-radius: 16px;
     padding: 25px 15px;
+    color: var(--color-darkModeLight);
 }
 
 .welcome-board img {
@@ -115,9 +116,14 @@ h2 {
     gap: 6px;
     font-size: 25px;
     padding: 10px 15px;
-    background-color: #0d2129;
+    background-color: var(--color-lightModeWhite);
     border-radius: 12px;
     min-width: 170px;
+    box-shadow: var(--box-shadow);
+}
+
+.home__report-card.dark {
+    background-color: var(--color-darkModeSecondary);
 }
 
 .home__report-icon {
@@ -127,6 +133,7 @@ h2 {
     font-size: 35px;
     padding: 6px;
     border-radius: 5px;
+    color: var(--color-darkModeLight);
 }
 
 .purple {
@@ -146,7 +153,6 @@ h2 {
 }
 
 .home__report-title {
-    color: rgba(255, 255, 255, 0.6);
     font-size: 18px;
 }
 
@@ -168,15 +174,22 @@ h2 {
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .home__recent-activities__list {
-    background-color: #0d2129;
-    padding: 15px 25px;
+    background-color: var(--color-lightModeWhite);
+    padding: 35px 25px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    box-shadow: var(--box-shadow);
+
+}
+
+.home__recent-activities__list.dark {
+    background-color: var(--color-darkModeSecondary);
 }
 
 .home__recent-activities__list-item {

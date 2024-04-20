@@ -1,8 +1,13 @@
 .page-container {
     min-height: 100%;
     padding-left: 22%;
-    background-color: #01161e;
-    
+    background-color: var(--color-lightModePrimary);   
+    color: var(--lightModeDark);
+}
+
+.page-container.dark {
+    background-color: var(--color-darkModePrimary); 
+    color: #fff;  
 }
 
 main {

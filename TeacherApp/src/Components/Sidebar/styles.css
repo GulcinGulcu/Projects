@@ -13,8 +13,9 @@
     align-items: center;
     padding: 30px 10px;
     text-align: center;
-    background-color: #457b9d;
+    background-color: var(--color-primary);
     border-radius: 12px;
+    color: var(--color-darkModeLight);
 
    
 }
