@@ -9,10 +9,6 @@ import './styles.css';
 
 export const SideBar = () => {
    const { username, isLoggedIn } = useSelector((state) => state.user);
-   const [active, setActive] = useState(null);
-
-
-
    return (
       <div className='sidebar-wrapper'>
          {isLoggedIn && <UserInfo username={username} />}
@@ -20,19 +16,16 @@ export const SideBar = () => {
             {
                sideBarData.map(item => (
                   <SideBarListItem
-                     item={item}
                      key={item.key}
                      to={item.to}
                      title={item.title}
                      className={item.className}
-                     active={active}
-                     setActive={setActive}
                      icon={item.icon}
                   />
                ))
             }
          </ul>
-         <button className="sidebar__logout-btn"><IoIosLogOut className="sidebar__logout-icon" />Log Out</button>
+         <button className="sidebar__logout-btn"><IoIosLogOut className="sidebar__logout-icon" /><span className="sidebar__logout-title">Log Out</span></button>
       </div>
    )
 }

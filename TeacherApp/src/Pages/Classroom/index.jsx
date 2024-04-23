@@ -1,12 +1,18 @@
 import { useForm } from 'react-hook-form';
-import { v4 as createId } from 'uuid';
 import { List } from './List';
 import { getMonthAndDay } from '../../Utils';
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { addItem, deleteItem } from '../../Modules/List/listSlicer';
 import { addActivity, deleteActivity } from '../../Modules/RecentActivities/recentActivitiesSlicer';
+import { Button } from '../../Components/Button';
+import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+import { IoIosArrowDown } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 import './styles.css';
+
+
 
 
 export const Classroom = () => {
@@ -14,7 +20,9 @@ export const Classroom = () => {
 
     const list = useSelector((state) => state.list);
     const dispatch = useDispatch();
-    const { username } = useSelector((state) => state.user);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [showFilterLinks, setShowFilterLinks] = useState(false);
+    const typeFilter = searchParams.get("type");
 
     const onSubmit = (data) => {
         const id = nanoid();
@@ -26,20 +34,23 @@ export const Classroom = () => {
             to: 'myclassroom',
         }))
         reset();
-        
+
     };
 
 
     const handleDelete = (id) => {
-       dispatch(deleteItem(id));
-       dispatch(deleteActivity(id));
+        dispatch(deleteItem(id));
+        dispatch(deleteActivity(id));
+    }
 
+    const handleFilter = (e) => {
+        setSearchParams({ type: e.target.textContent });
+        setShowFilterLinks(false);
     }
 
     return (
         <div className='content-wrapper'>
-            <h1>Welcome {username}!</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className='classroom__form' onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="content"></label>
                 {errors.content && <p>{errors.content.message}</p>}
                 <textarea id="content" {...register('content', {
@@ -50,14 +61,33 @@ export const Classroom = () => {
                 <div className='select-and-btn-area'>
                     {errors.type && <p>{errors.type.message}</p>}
                     <select id="type" {...register('type', { required: 'Please, select an option.' })}>
-                        <option value="">Choose one</option>
+                        <option value="">Type</option>
                         <option value="Assignment">Assignment</option>
                         <option value="Announcement">Announcement</option>
                     </select>
-                    <button type="submit">Share</button>
+                    <Button type="submit" className='classroom__submit-btn'>Share</Button>
                 </div>
             </form>
-            {list && <List list={list} handleDelete={handleDelete} />}
+            <div className='classroom__timeline'>
+                <h3>Classroom Timeline</h3>
+                <div>
+                    <div className='classroom__filter'>
+                        <Button className='classroom__filter-btn' onClick={() => setShowFilterLinks(!showFilterLinks)}>{typeFilter ? <>{typeFilter}</> : <>Filter by <IoIosArrowDown /></>}</Button>
+                        {typeFilter &&
+                            <Button onClick={() => {
+                                setSearchParams('');
+                            }} className='classroom__clear-filter-btn'>Clear Filter</Button>
+                        }
+                    </div>
+                    {showFilterLinks &&
+                        <ul>
+                            <li><Button onClick={(e) => handleFilter(e)}>Assignment</Button></li>
+                            <li><Button onClick={(e) => handleFilter(e)}>Announcement</Button></li>
+                        </ul>
+                    }
+                </div>
+            </div>
+            {list && <List list={list} handleDelete={handleDelete} typeFilter={typeFilter} />}
         </div>
     )
 }

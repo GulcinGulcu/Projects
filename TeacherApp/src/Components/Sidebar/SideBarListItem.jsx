@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom"
 
-export const SideBarListItem = ({ className, title, to, item, setActive, active, icon }) => {
+export const SideBarListItem = ({ className, title, to, icon }) => {
     return (
         <li>
-           <NavLink className={active === item.id ? `${className} active` : className} onClick={() => setActive(item.id)} to={to}><span>{icon}</span><span>{title}</span></NavLink>
+           <NavLink className={({ isActive }) => isActive ? `${className} active` : className} to={to}><span>{icon}</span><span className="sidebar__link-title">{title}</span></NavLink>
         </li>
     )
 }

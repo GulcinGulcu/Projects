@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 import TeacherImage from '../../Assets/teacherphoto.png';
 import { Report } from './Report';
 import { RecentActivities } from './RecentActivities';
-import { formatISO } from "date-fns";
 
 
 
@@ -58,8 +57,8 @@ export const Home = () => {
                             <section className='welcome-board'>
                                 <img src={TeacherImage}></img>
                                 <div>
-                                    <h2><span className='text--light'>Welcome, </span> {user.username}! </h2>
-                                    <p className='text--light'>Have a nice day at work!</p>
+                                    <h2><span>Welcome, </span> {user.username}! </h2>
+                                    <p>Have a nice day at work!</p>
                                 </div>
                             </section>
                             <Report />

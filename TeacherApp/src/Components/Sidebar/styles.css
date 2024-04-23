@@ -1,5 +1,6 @@
 .sidebar-wrapper {
     width: 20%;
+    min-width: 75px;
     position: fixed;
     top: 3%;
     left: 2%;
@@ -17,16 +18,16 @@
     border-radius: 12px;
     color: var(--color-darkModeLight);
 
-   
+
 }
 
 .user-info {
     display: flex;
     flex-direction: column;
-    
+
 }
 
-.user-info > hr {
+.user-info>hr {
     width: 60%;
     color: rgba(255, 255, 255, 0.5);
     margin-top: 15px;
@@ -40,10 +41,11 @@
 .user-img {
     width: 40%;
     border-radius: 50%;
-    
+
 }
 
-h4, p {
+h4,
+p {
     margin: 0;
 }
 
@@ -52,7 +54,7 @@ h4, p {
     display: flex;
     flex-direction: column;
     width: 70%;
-    
+
 
 }
 
@@ -68,6 +70,7 @@ h4, p {
 .sidebar__link.active {
     background-color: rgba(255, 255, 255, 0.5)
 }
+
 .sidebar__logout-btn {
     background-color: transparent;
     border: none;
@@ -85,5 +88,20 @@ h4, p {
     font-size: 28px;
 }
 
+@media all and (max-width: 768px) {
+    .sidebar-wrapper {
+        width: 15%;
+    }
 
+    .sidebar__link-title {
+        display: none;
+    }
 
+    .sidebar__logout-title {
+        display: none;
+    }
+
+    .sidebar__link {
+      justify-content: center;
+    }
+}

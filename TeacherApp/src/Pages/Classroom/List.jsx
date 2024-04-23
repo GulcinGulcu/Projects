@@ -11,12 +11,16 @@ import { FaCheck } from "react-icons/fa";
 
 
 
-export const List = ({ list, handleDelete }) => {
+export const List = ({ list, handleDelete, typeFilter}) => {
   const dispatch = useDispatch();
   const [editItemId, setEditItemId] = useState('');
   const itemList = useSelector((state) => state.list.filter(item => item.id === editItemId));
   const inputElement = useRef(null);
   const [editedItem, setEditedItem] = useState('');
+  const { isDarkMode } = useSelector(state => state.darkMode);
+
+  const displayedListItems = typeFilter ? list.filter(item => item.type === typeFilter) : list;
+
   useEffect(() => {
     setEditedItem(itemList[0]?.content);
     inputElement.current?.focus();
@@ -27,16 +31,12 @@ export const List = ({ list, handleDelete }) => {
     setEditItemId('');
   }
 
-
-
-
-  console.log(editedItem)
   return (
     <ul className="classroom__list">
       {
-        list.map(item => {
+        displayedListItems.map(item => {
           return (
-            <li className="classroom__list__list-item" key={item.id}>
+            <li className={isDarkMode ? 'classroom__list__list-item dark' : 'classroom__list__list-item'} key={item.id}>
               <span className="icon">{item.type === 'Announcement' ? (<TfiAnnouncement className='home__report-icon blue' />) : (<MdOutlineAssignment className='home__report-icon red' />)}</span>{editItemId !== item.id ? (<span className="classroom__list__list-content">{item.content}</span>) : <input ref={inputElement} className="classroom__list__list-content" value={editedItem} onChange={(e) => setEditedItem(e.target.value)} />}
               <div className="classroom__list__btn-area">
                 {editItemId === item.id ? (<button onClick={() => handleEdit(item.id)}><FaCheck /></button>) : (<button onClick={() => setEditItemId(item.id)}><AiOutlineEdit /></button>)}

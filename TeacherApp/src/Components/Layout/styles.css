@@ -3,6 +3,7 @@
     padding-left: 22%;
     background-color: var(--color-lightModePrimary);   
     color: var(--lightModeDark);
+    padding-bottom: 15px;
 }
 
 .page-container.dark {
@@ -13,4 +14,10 @@
 main {
     width: 100%;
     min-height: 100vh;
+}
+
+@media all and (max-width: 768px) {
+    .page-container {
+        padding-left: 18%;
+    }
 }

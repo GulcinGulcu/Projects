@@ -21,7 +21,7 @@ export const Header = () => {
                 <p>{date}</p>
             </div>
             <div>
-                <FormControlLabel label='Light mode' control={<Switch checked={!isDarkMode} onChange={() => dispatch(toggleDarkMode())} />}/>
+                <FormControlLabel label='Dark mode' control={<Switch checked={isDarkMode} onChange={() => dispatch(toggleDarkMode())} />}/>
                 {
                     isLoggedIn ? (<Button className='home__header-btn'>+  Add Student</Button>) :
                     (<NavLink to='login' className='home__header-btn'>Log In</NavLink>)

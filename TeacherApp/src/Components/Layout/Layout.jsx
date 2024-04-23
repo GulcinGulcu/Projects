@@ -11,8 +11,8 @@ export const Layout = () => {
     return (
         <div className={isDarkMode ? 'page-container dark' : 'page-container'}>
             <SideBar />
+            <Header /> 
             <main>
-                <Header />
                 <Outlet />
             </main>
         </div>

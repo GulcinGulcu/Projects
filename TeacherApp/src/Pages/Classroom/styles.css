@@ -2,24 +2,27 @@
     padding: 25px 50px;
 }
 
-form {
+.classroom__form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    padding: 15px 35px;
+    padding: 5px 35px;
     margin-bottom: 15px;
+    background-color: #d0d5d8;
+    border-radius: 8px;
 
 }
 
-textarea {
+.classroom__form > textarea {
     border: none;
     resize: none;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: var(--box-shadow);
     border-radius: 10px;
     width: 100%;
     font-family: inherit;
     padding: 10px;
+    
 }
 
 .classroom__list {
@@ -30,7 +33,7 @@ textarea {
 }
 
 .classroom__list__list-item {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: var(--box-shadow);
     border-radius: 10px;
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -39,7 +42,11 @@ textarea {
     justify-items: center;
     padding: 25px 15px;
     gap: 25px;
-    background-color: #0d2129;
+    background-color: #d0d5d8;
+}
+
+.classroom__list__list-item.dark {
+    background-color: var(--color-darkModeSecondary);
 }
 
 .classroom__list__list-content {
@@ -65,6 +72,15 @@ textarea {
     justify-content: space-between;
 }
 
+.select-and-btn-area > select {
+    padding: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-lightModeWhite);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
 .classroom__list__delete-btn {
     color: red;
 }
@@ -83,5 +99,47 @@ textarea {
 }
 
 .classroom__list__btn-area > button:hover {
-    background-color: #1a659e;
+    background-color: var(--color-primary);
+}
+
+.classroom__submit-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-lightModeWhite);
+} 
+
+.classroom__filter-btn {
+    border: none;
+    background-color: transparent;
+    color: var(--color-lightModeWhite);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+.classroom__timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.classroom__timeline h3 {
+    margin: 0;
+}
+
+.classroom__filter {
+    display: flex;
+}
+
+.classroom__clear-filter-btn {
+    margin:auto;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: red;
 }
