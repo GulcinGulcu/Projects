@@ -209,3 +209,14 @@ h2 {
     }
 
 }
+
+@media all and (max-width: 481px) {
+    .welcome-board {
+        width: 95%;
+    }
+
+    .welcome-board p, h2 {
+        font-size: 20px;
+        padding-left: 30px;
+    }
+}

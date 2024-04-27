@@ -16,11 +16,11 @@ export const Header = () => {
 
     return (
         <header className='home__header'>
-            <div>
+            <div className='home__date-area'>
                 <h4>Dashboard</h4>
                 <p>{date}</p>
             </div>
-            <div>
+            <div className='home__header-btns'>
                 <FormControlLabel label='Dark mode' control={<Switch checked={isDarkMode} onChange={() => dispatch(toggleDarkMode())} />}/>
                 {
                     isLoggedIn ? (<Button className='home__header-btn'>+  Add Student</Button>) :

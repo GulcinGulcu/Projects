@@ -63,7 +63,6 @@ export const Home = () => {
                             </section>
                             <Report />
                             <RecentActivities />
-                        
                         </>
                     )
             }

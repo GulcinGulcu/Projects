@@ -51,7 +51,7 @@ export const Classroom = () => {
     return (
         <div className='content-wrapper'>
             <form className='classroom__form' onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="content"></label>
+                <label htmlFor="content" className='sr-only'></label>
                 {errors.content && <p>{errors.content.message}</p>}
                 <textarea id="content" {...register('content', {
                     required:

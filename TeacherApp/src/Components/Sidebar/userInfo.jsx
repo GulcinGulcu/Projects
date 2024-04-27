@@ -1,4 +1,4 @@
-import teacherPhoto from '../../Assets/user2.jpg';
+import teacherPhoto from '../../Assets/user8.jpg';
 
 export const UserInfo = ({ username }) => {
     return (

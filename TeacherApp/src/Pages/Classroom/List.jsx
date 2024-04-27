@@ -41,7 +41,7 @@ export const List = ({ list, handleDelete, typeFilter}) => {
               <div className="classroom__list__btn-area">
                 {editItemId === item.id ? (<button onClick={() => handleEdit(item.id)}><FaCheck /></button>) : (<button onClick={() => setEditItemId(item.id)}><AiOutlineEdit /></button>)}
                 <button className='classroom__list__delete-btn' onClick={() => handleDelete(item.id)}><RiDeleteBinFill /></button></div>
-              <div><span>{item.date.day}, </span><span>{item.date.month}</span></div>
+              <div className="classroom__list-date"><span>{item.date.day}, </span><span>{item.date.month}</span></div>
             </li>)
         })
       }

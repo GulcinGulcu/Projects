@@ -14,3 +14,22 @@
     border-radius: 12px;
     color: #fff;
 }
+
+@media all and (max-width: 481px) {
+    .home__header {
+        padding: 5px 0;
+        align-items: center;
+    }
+    .home__header-btns {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+    .home__header-btn {
+        font-size: 14px;
+    }
+
+    .home__date-area {
+        font-size: 14px;
+    }
+}
