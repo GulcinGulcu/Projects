@@ -100,9 +100,26 @@
   
 }
 
+@media all and (max-width: 786px) {
+
+   .lessons {
+    font-size: 24px;
+   }
+   .lesson {
+    flex-direction: column;
+   }
+}
+
 @media all and (max-width: 481px) {
   .lessons {
     font-size: 18px;
+    gap: 8px;
+  }
+
+  .lesson {
+    flex-direction: column;
+    min-width: 100px;
+    padding: 12px 30px;
   }
 }
 

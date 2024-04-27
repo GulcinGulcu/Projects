@@ -5,7 +5,6 @@ import { LessonListItem } from "./LessonListItem";
 import { Outlet, NavLink } from "react-router-dom";
 
 export const Lessons = () => {
-   const apiKey = 'AIzaSyCBM7QekDW13tJKPL7OGi1mZZRwUhtzkZk';
    const [queryParam, setQueryParam] = useState('');
    const [videos, setVideos] = useState(null);
    const [nextPage, setNextPage] = useState(0);
@@ -16,7 +15,7 @@ export const Lessons = () => {
    useEffect(() => {
       if (queryParam !== '') {
          if (nextPage) {
-            fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${queryParam}&key=${apiKey}&pageToken=${nextPageTkn}`)
+            fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${queryParam}&key=${process.env.REACT_APP_API_KEY}&pageToken=${nextPageTkn}`)
                .then(res => res.json())
                .then(data => {
                   setNextPageTkn(data.nextPageToken);
@@ -25,7 +24,7 @@ export const Lessons = () => {
                .catch(err => console.log(err))
 
          } else {
-            fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${queryParam}&key=${apiKey}`)
+            fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${queryParam}&key=${process.env.REACT_APP_API_KEY}`)
                .then(res => res.json())
                .then(data => {
                   setNextPageTkn(data.nextPageToken);

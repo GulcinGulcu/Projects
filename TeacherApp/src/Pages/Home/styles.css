@@ -116,7 +116,7 @@ h2 {
     padding: 10px 15px;
     background-color: var(--color-lightModeWhite);
     border-radius: 12px;
-    min-width: 170px;
+    min-width: 150px;
     box-shadow: var(--box-shadow);
 }
 
@@ -217,6 +217,34 @@ h2 {
 
     .welcome-board p, h2 {
         font-size: 20px;
-        padding-left: 30px;
+        padding-left: 50px;
+    }
+
+    .home__report > p, .home__recent-activities > p {
+        font-size: 20px;
+    }
+
+    .home__report-card {
+      font-size: 18px;
+    }
+
+    .home__report-icon {
+      font-size: 20px;
+    }
+
+    .home__recent-activities__list-item {
+      font-size: 16px;
+    }
+
+    .home__report-title {
+      font-size: 16px;
+    }
+
+    .welcome-board img {
+        left: -8%;
+    }
+
+    .home__report-cards {
+        justify-content: center;
     }
 }
