@@ -1,0 +1,36 @@
+.my-work {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    text-align: center;
+}
+
+.section__subtitle--work {
+    color: var(--color-blue);
+    background-color: transparent;
+    font-weight: bold;
+    
+}
+
+.portfolio {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0 auto;
+    gap: 5px;
+}
+
+.portfolio__img {
+    height: 100%;
+    object-fit:cover;
+    transition: transform 0.7s cubic-bezier(.5, 0, .5, 1), opacity 0.2s linear;
+}
+
+.portfolio__item {
+    background-color: var(--color-blue);
+    overflow: hidden;
+}
+
+.portfolio__img:hover, .portfolio__item:focus .portfolio__img {
+   opacity: 0.5;
+   transform: scale(1.2);
+}
