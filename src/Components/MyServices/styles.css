@@ -1,0 +1,41 @@
+.my-services {
+    background-image: url('../../Assests/services-bg.jpg');
+    background-size: cover;
+    color: var(--color-light);
+    text-align: center;
+    background-color: var(--color-dark);
+}
+
+.services {
+    max-width: 1000px;
+}
+
+.service {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.section__title--services {
+    color: var(--color-blue);
+    
+}
+
+.section__title--services::after {
+    content: "";
+    display: block;
+    width: 7rem;
+    height: 1px;
+    background-color: var(--color-light);
+    margin: 24px auto;
+    opacity: 0.5;
+}
+
+@media (min-width: 800px) {
+
+    .services {
+        display: flex;
+        gap: 1.7rem;
+        margin: 0 auto
+    }
+
+}
