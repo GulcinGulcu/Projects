@@ -8,7 +8,7 @@
 
 .page-container.dark {
     background-color: var(--color-darkModePrimary); 
-    color: #fff;  
+    color: #fff; 
 }
 
 main {
@@ -25,6 +25,7 @@ main {
 @media all and (max-width: 481px) {
     .page-container {
         padding-left: 0;
-        padding-top: 22%;
+        padding-top: 5%;
+        padding-bottom: 22%;
     }
 }

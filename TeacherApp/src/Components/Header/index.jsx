@@ -1,11 +1,11 @@
 import './styles.css'
 import { NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux';
-import { logout } from "../../Modules/User/userSlice";
+import { logout } from "../../Features/User/userSlice";
 import { Button } from '../Button';
 import { formatISO } from "date-fns";
 import {Switch, FormControlLabel} from '@mui/material';
-import { toggleDarkMode } from '../../Modules/DarkMode/darkModeSlicer';
+import { toggleDarkMode } from '../../Features/DarkMode/darkModeSlicer';
 
 export const Header = () => {
     const { isLoggedIn } = useSelector((state) => state.user);

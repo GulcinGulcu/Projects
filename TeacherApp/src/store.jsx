@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import userReducer from './Modules/User/userSlice';
-import listReducer from './Modules/List/listSlicer';
-import studentReducer from './Modules/Student/studentSlicer';
-import recentActivitiesReducer from './Modules/RecentActivities/recentActivitiesSlicer';
-import darkModeReducer from './Modules/DarkMode/darkModeSlicer';
+import userReducer from './Features/User/userSlice';
+import listReducer from './Features/List/listSlicer';
+import studentReducer from './Features/Student/studentSlicer';
+import recentActivitiesReducer from './Features/RecentActivities/recentActivitiesSlicer';
+import darkModeReducer from './Features/DarkMode/darkModeSlicer';
 
 
 export default configureStore({

@@ -1,6 +1,4 @@
 .lessons-wrapper {
-    min-width: 100%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 15px;
@@ -16,7 +14,7 @@
 
 }
 
-.videos-nav {
+.video-nav {
   font-size: 24px;
   background-color: #0d2129;
   padding: 15px 25px;
@@ -47,11 +45,16 @@
   background-color: var(--color-primary);
   cursor: pointer;
   min-width: 150px;
+  transition: scale .4s ease-in-out;
+  
+}
 
+.lesson:hover {
+  scale: 1.05;
 }
 
 .lesson.active {
-  background-color: #457b9d;
+  background-color: var(--color-primaryActive);
   color: #fff;
 }
 
@@ -70,34 +73,52 @@
 
 }
 
+
 .video-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-lightModeSecondary);
   gap: 8px;
-  background-color: #0d2129;
   padding: 10px;
-  width: 30%;
+  max-width: 30%;
+  min-width: 300px;
   max-height: 30%;
   border-radius: 12px;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  
+}
+
+.video-wrapper.dark {
+  background-color: var(--color-darkModeSecondary);
 }
 
 .video-img {
   width: 100%;
-  min-height: 80%;
+  min-height: 70%;
   max-height: 200px;
 }
+
+.video-title {
+  margin-top: 8px;
+}
+
 
 .lessons__save-btn {
   align-self: flex-end;
   background-color: transparent;
   padding: 5px;
   font-size: 22px;
-  color: #fff;
   border: none;
   
+}
+
+.lessons__save-btn.dark {
+  color: var(--color-lightModeWhite);
+}
+
+.no-saved-video {
+  margin: auto;
 }
 
 @media all and (max-width: 786px) {
@@ -111,6 +132,9 @@
 }
 
 @media all and (max-width: 481px) {
+  .lessons-wrapper > nav  {
+    padding-bottom: 0;
+  }
   .lessons {
     font-size: 18px;
     gap: 8px;
@@ -120,6 +144,10 @@
     flex-direction: column;
     min-width: 100px;
     padding: 12px 30px;
+  }
+
+  .video-nav {
+    font-size: 18px;
   }
 }
 

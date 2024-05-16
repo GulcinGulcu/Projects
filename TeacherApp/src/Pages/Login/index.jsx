@@ -1,8 +1,8 @@
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { nanoid } from "@reduxjs/toolkit";
-import { addActivity } from "../../Modules/RecentActivities/recentActivitiesSlicer";
-import { login, updateUser } from "../../Modules/User/userSlice";
+import { addActivity } from "../../Features/RecentActivities/recentActivitiesSlicer";
+import { login, updateUser } from "../../Features/User/userSlice";
 import { useForm } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 import './styles.css';

@@ -44,8 +44,7 @@ export const Lessons = () => {
    }
 
    const activeStyles = {
-      backgroundColor: '#c81d25',
-      textDecoration: 'underline',
+      backgroundColor: 'var(--color-primaryActive)',
       padding: '20px 25px',
    }
 
@@ -69,9 +68,9 @@ export const Lessons = () => {
          {videos && (
             <nav>
                <NavLink
-                  to='.' end className='videos-nav' style={({ isActive }) => isActive ? activeStyles : null} >All Videos</NavLink>
+                  to='.' end className='video-nav' style={({ isActive }) => isActive ? activeStyles : null} >All Videos</NavLink>
                <NavLink
-                  to='savedVideos' className='videos-nav' style={({ isActive }) => isActive ? activeStyles : null}>Saved Videos</NavLink>
+                  to='savedVideos' className='video-nav' style={({ isActive }) => isActive ? activeStyles : null}>Saved Videos</NavLink>
             </nav>
          )}
          <Outlet context={{ videos, savedVideoId, setSavedVideoId, setNextPage }} />

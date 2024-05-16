@@ -4,7 +4,7 @@ import { RiDeleteBinFill } from "react-icons/ri";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
-import { editItem } from "../../Modules/List/listSlicer";
+import { editItem } from "../../Features/List/listSlicer";
 import { FaCheck } from "react-icons/fa";
 
 

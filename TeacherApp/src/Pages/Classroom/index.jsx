@@ -3,13 +3,12 @@ import { List } from './List';
 import { getMonthAndDay } from '../../Utils';
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { addItem, deleteItem } from '../../Modules/List/listSlicer';
-import { addActivity, deleteActivity } from '../../Modules/RecentActivities/recentActivitiesSlicer';
+import { addItem, deleteItem } from '../../Features/List/listSlicer';
+import { addActivity, deleteActivity } from '../../Features/RecentActivities/recentActivitiesSlicer';
 import { Button } from '../../Components/Button';
 import { useSearchParams } from 'react-router-dom';
 import { useState } from 'react';
 import { IoIosArrowDown } from "react-icons/io";
-import { RxCross2 } from "react-icons/rx";
 import './styles.css';
 
 
