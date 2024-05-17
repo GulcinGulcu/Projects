@@ -11,6 +11,9 @@ import { Login } from "./Pages/Login";
 import './App.css';
 import { SavedVideos } from "./Pages/Lessons/SavedVideos";
 import { Videos } from "./Pages/Lessons/Videos";
+import { GeneralInformation } from './Pages/Students/StudentDetails/GeneralInformation';
+import { Grades } from "./Pages/Students/StudentDetails/Grades";
+import { OtherInfo } from "./Pages/Students/StudentDetails/OtherInfo";
 
 function App() {
   return (
@@ -26,7 +29,11 @@ function App() {
             </Route>
             <Route path="whiteboard" element={<Whiteboard />} />
             <Route path="students" element={<StudentList />} />
-            <Route path="students/:id/details" element={<StudentDetail />} />
+            <Route path="students/:id/details" element={<StudentDetail />}>
+              <Route index element={<GeneralInformation />} />
+              <Route path="grades" element={<Grades />} />
+              <Route path="other" element={<OtherInfo />} />
+            </Route>
           </Route>
           <Route path="login" element={<Login />} />
         </Route>

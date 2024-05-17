@@ -1,36 +1,58 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Card } from "../../Components/Card";
-import { IoMdCall } from "react-icons/io";
-
-
-import './styles.css';
-import { Button } from "../../Components/Button";
-
+import "./styles.css";
 
 export const StudentList = () => {
-    const studentData = useSelector((state) => state.student);
-    return (
-        <div className="page-wrapper">
-            <section className="student__card-wrapper">
-                {
-                    studentData.map(student => (
-                        <Card className='student__card' key={student.generalInfo.id}>
-                            <div className="student__card-img-wrapper">
-                                <img src={student.generalInfo.image} className="student__card-img" />
-                            </div>
-                            <div className="student__card-info">
-                                <span>{student.generalInfo.firstName} {student.generalInfo.lastName}</span>
-                                <span className="light-font">{student.generalInfo.grade}th Grade Student</span>
-                                <div>
-                                   <IoMdCall /> {student.communicationInfo.phoneNumber}
-                                </div>
-                                <Link className="details-link" to={`${student.generalInfo.id}/details`}>See Details</Link>
-                            </div>
-                        </Card>
-                    ))
-                }
-            </section>
-        </div>
-    )
-}
+  const studentData = useSelector((state) => state.student);
+  const { isDarkMode } = useSelector(state => state.darkMode);
+
+  return (
+    <section className="student-page-wrapper">
+      <div>
+        <h4>All Students</h4>
+        <p>You can find all your students information</p>
+      </div>
+      <table className={isDarkMode ? 'student-table dark' : 'student-table'}>
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Grade</th>
+            <th className="student-table-number">Parent Contact Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {studentData.map((student) => (
+            <tr key={student.generalInfo.id} className="student-table-tr">
+              <td className="student-name-and-image">
+                <img
+                  src={student.generalInfo.image}
+                  className="student-table-img"
+                />
+                <div>
+                  <span>
+                    {student.generalInfo.firstName}{" "}
+                    {student.generalInfo.lastName}
+                  </span>
+                </div>
+              </td>
+              <td className="student-table-grade">
+                {student.generalInfo.grade}th grade student
+              </td>
+              <td className="student-table-number">
+                {student.communicationInfo.phoneNumber}
+              </td>
+              <td>
+                <Link
+                  to={`${student.generalInfo.id}/details`}
+                  className="detail-link"
+                >
+                  See Details
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+};

@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { CgProfile } from "react-icons/cg";
 import './styles.css';
-import { GeneralInformation } from "./GeneralInformation";
 
 export const StudentDetail = () => {
     const studentData = useSelector((state) => state.student);
@@ -14,26 +12,29 @@ export const StudentDetail = () => {
         setStudentDetail(student[0]);
     }, [id])
 
+    const activeStyles = {
+        backgroundColor: 'var(--color-lightModeSecondary)',
+        color: 'var(--color-primary)',
+        scale: '1',
+        transition: 'none',
+        fontWeight: 'bold',
+    }
     
     return (
         <>
             {studentDetail && <div className="detail-container">
                 <section className="avatar-container">
-                    <span className={`avatar ${studentDetail.generalInfo.gender === 'Male' ? 'boy' : 'girl'}`}><CgProfile /></span>
+                    <img src={studentDetail.generalInfo.image} className="student-img" />
                 </section>
+                <nav>
+                    <NavLink to='.' end className="student-detail__link" style={({ isActive }) => isActive ? activeStyles : null} >General Information</NavLink>
+                    <NavLink to='grades' className="student-detail__link"  style={({ isActive }) => isActive ? activeStyles : null}>Grades</NavLink>
+                    <NavLink to='other' className="student-detail__link"  style={({ isActive }) => isActive ? activeStyles : null}>Other</NavLink>
+                </nav>
                 <section>
-                    <h4>General Information</h4>
-                    <GeneralInformation generalInfo={studentDetail.generalInfo} />
+                    <Outlet />
                 </section>
             </div>}
         </>
     )
 }
-
-
-/*
-<span className={`avatar ${studentDetail.generalInfo.gender === 'Male' ? 'boy' : 'girl'}`}><CgProfile /></span>
-
-<GeneralInformation generalInfo={studentDetail.generalInfo} />
-
-*/

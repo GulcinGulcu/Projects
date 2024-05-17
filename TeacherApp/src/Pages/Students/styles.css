@@ -1,61 +1,79 @@
-.student__card {
-   width: 20%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   position: relative;
-   height: 250px;
-   border-radius: 34px;
-   background-color: #0d2129;
-   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-  
+th {
+    text-align: start;
 }
 
-.student__card-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 25px;
-    gap: 35px;
-    
+thead > tr {
+    border-top: 0;
 }
 
-.student__card-info {
-    display: flex;
-    flex-direction: column;
-    flex: 3;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+th, td {
+    padding: 16px 24px;
 }
 
-.student__card-img-wrapper {
-    width: 100%;
-    position: relative;
-    flex: 2;
-    background-color: #edf2f4;
-    border-radius: 5px 5px 0 0;
+tr {
+    border-top: 1px solid #b5c29f;
 }
 
-.student__card-img {
-    width: 50%;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -25%;
-    left: 25%;
-    border: 3px solid #fff;
+.student-page-wrapper {
+    overflow-x: auto;
+    padding: 2rem;
+}
 
+.student-table {
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: var(--color-lightModeSecondary);
+    margin-top: 2rem;
+    border-radius: 8px;
    
 }
 
-.light-font {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 12px;
+.student-table.dark {
+    background-color: var(--color-darkModeSecondary);
 }
 
-.details-link {
-    background-color: #e85d04;
-    padding: 5px 10px;
-    border-radius: 8px;
-    
+.student-table.dark > thead > tr {
+    border-top: 1px solid var(--color-lightModeSecondary);
+}
+
+.student-table.dark > thead > tr {
+    border-top: 0;
+}
+
+.student-table-img {
+    width: 48px;
+    border-radius: 50%;
+}
+
+.student-name-and-image {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.detail-link {
+    color: var(--color-orange);
+}
+
+@media all and (max-width: 768px) {
+    .student-table {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 481px) {
+    .student-table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px 12px;
+    }
+
+    .student-table-number {
+        display: none;
+    }
 }

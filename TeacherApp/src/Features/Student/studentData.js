@@ -29,12 +29,12 @@ export const studentData = [
         },
         "grades":
         {
-            "Math": "C+",
-            "Science": "B-",
-            "English": "B+",
-            "Social Studies": "A",
-            "Physical Education": "A+",
-            "Visual Arts": "B-"
+            "math": "B+",
+            "science": "A-",
+            "english": "C+",
+            "socialStudies": "A",
+            "physicalEducation": "A+",
+            "visualArts": "B+"
         },
 
     },
@@ -61,12 +61,12 @@ export const studentData = [
         },
         "grades":
         {
-            "Math": "C+",
-            "Science": "B-",
-            "English": "B+",
-            "Social Studies": "A",
-            "Physical Education": "A+",
-            "Visual Arts": "B-"
+            "math": "B+",
+            "science": "A-",
+            "english": "C+",
+            "socialStudies": "A",
+            "physicalEducation": "A+",
+            "visualArts": "B+"
         },
 
     },
@@ -92,12 +92,12 @@ export const studentData = [
         },
         "grades":
         {
-            "Math": "B+",
-            "Science": "A-",
-            "English": "C+",
-            "Social Studies": "A",
-            "Physical Education": "A+",
-            "Visual Arts": "B+"
+            "math": "B+",
+            "science": "A-",
+            "english": "C+",
+            "socialStudies": "A",
+            "physicalEducation": "A+",
+            "visualArts": "B+"
         },
 
     },
@@ -123,12 +123,12 @@ export const studentData = [
         },
         "grades":
         {
-            "Math": "B+",
-            "Science": "A-",
-            "English": "B",
-            "Social Studies": "A+",
-            "Physical Education": "B-",
-            "Visual Arts": "B+"
+            "math": "B+",
+            "science": "A-",
+            "english": "C+",
+            "socialStudies": "A",
+            "physicalEducation": "A+",
+            "visualArts": "B+"
         }
     },
     {
@@ -153,12 +153,12 @@ export const studentData = [
         },
         "grades":
         {
-            "Math": "B+",
-            "Science": "A-",
-            "English": "B",
-            "Social Studies": "A+",
-            "Physical Education": "B-",
-            "Visual Arts": "B+"
+            "math": "B+",
+            "science": "A-",
+            "english": "C+",
+            "socialStudies": "A",
+            "physicalEducation": "A+",
+            "visualArts": "B+"
         },
 
     },
